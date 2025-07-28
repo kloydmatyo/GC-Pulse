@@ -1,0 +1,63 @@
+/* General styling for the select dropdown */
+select[name="category"] {
+    border: 2px solid #e5e5e5; /* Light blue border */
+    border-radius: 8px; /* Smoother rounded corners */
+    background-color: #e5e5e5; /* Off-white background for a softer look */
+    color: #495057; /* Dark grey text for better readability */
+    width: 590px; /* Ensure the select takes full width of its container */
+    min-width: 200px; /* Set a minimum width for consistency */
+    max-width: 100%; /* Ensure it doesn't exceed the container width */
+    padding: 10px 15px; /* Add padding for better spacing */
+    font-family: 'Roboto', sans-serif; /* More modern font for a cleaner look */
+    font-size: 16px; /* Slightly larger text for readability */
+    transition: all 0.3s ease; /* Smooth transition for interactive states */
+    outline: none; /* Removes the default outline */
+    box-sizing: border-box; /* Ensures padding and border are included in the width */
+    cursor: pointer; /* Indicates it's clickable */
+}
+
+/* Change background color and border on hover */
+select[name="category"]:hover {
+    background-color: #e5e5e5; /* Subtle light blue background on hover */
+    border-color: #cecece; /* Darker blue border on hover */
+}
+
+/* Change background and border color on focus (when user clicks on the dropdown) */
+select[name="category"]:focus {
+    background-color: #d9e8f9; /* Light blue background */
+    border-color: #cecece; /* Consistent dark blue border on focus */
+
+}
+
+/* Style the options inside the dropdown */
+select[name="category"] option {
+    padding: 12px 15px; /* Increased padding for better legibility */
+    font-size: 16px; /* Ensure consistent text size */
+    color: #495057; /* Default dark text color */
+    background-color: #fff; /* White background for options */
+    transition: background-color 0.2s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for option items */
+select[name="category"] option:hover {
+    background-color: #f1f3f5; /* Subtle hover background for options */
+}
+
+/* Selected option color change */
+select[name="category"] option[selected] {
+    background-color: #cecece; /* Blue background */
+    color: #fff; /* White text for selected option */
+}
+
+/* Active option (when user selects an option) */
+select[name="category"]:active option {
+    background-color: #cecece; /* Darker blue for active option */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    select[name="category"] {
+        font-size: 14px; /* Adjust font size for smaller screens */
+        padding: 8px 12px; /* Adjust padding for better fit */
+    }
+}

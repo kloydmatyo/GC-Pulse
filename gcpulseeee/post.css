@@ -1,0 +1,116 @@
+/* General page layout */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+    margin: 20px;
+    padding: 0;
+    color: #333;
+}
+
+/* Post Title */
+h2 {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+/* Post Author and Content */
+p {
+    line-height: 1.6;
+}
+
+/* Comments Section */
+h3, h4 {
+    margin-top: 40px;
+    color: #333;
+}
+
+/* Comment box container */
+.comment-box {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+/* Replies */
+.reply-box {
+    margin-left: 30px;
+    margin-top: 10px;
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-left: 3px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Avatar style (optional, you can dynamically load avatars) */
+.avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+/* Comment author name */
+.comment-author {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Form styling */
+form {
+    margin-top: 10px;
+}
+
+textarea {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    resize: vertical;
+    font-size: 14px;
+}
+
+/* Buttons */
+button {
+    margin-top: 5px;
+    background-color: #1d72b8;
+    color: white;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #155d90;
+}
+
+/* Reply form */
+form.reply-form {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+/* Like button */
+form[action="toggle_like.php"] button {
+    background-color: #ffca28;
+    color: #333;
+}
+
+form[action="toggle_like.php"] button:hover {
+    background-color: #ffc107;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    textarea {
+        width: 100%;
+    }
+
+    .reply-box {
+        margin-left: 15px;
+    }
+}

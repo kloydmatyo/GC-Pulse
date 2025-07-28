@@ -1,0 +1,209 @@
+/* Core layout styles */
+html, body {
+    height: 100%;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    background-color: #f5f7fa;
+}
+
+.bgcontainer {
+    background-color: #F0F0F0;
+    width: 100%;
+    box-shadow: 0 20px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-page-container {
+    width: 100%;
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* Cover Photo Area */
+.profile-cover {
+position: relative;
+    width: 1800px;
+    height: 46px;
+    right: 442px;
+    background-color: #D6C7B1;
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+}
+
+.profile-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Profile Avatar Container - Updated positioning */
+.profile-avatar-container {
+    position: relative; /* Change from absolute to relative */
+    bottom: 0;
+    left: 0;
+    padding: 4px;
+    background-color: white;
+    border-radius: 50%;
+    margin-right: 16px; /* Add spacing between avatar and name */
+    display: inline-block; /* Allow horizontal alignment */
+}
+
+.profile-avatar-container img {
+    width: 150px; /* Reduce size to match heading */
+    height: 150px;
+    border-radius: 50%;
+    border: none;
+    object-fit: cover;
+}
+
+/* Profile Info Section - Updated layout */
+.profile-info-section {
+    padding: 16px 32px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Change from flex-end to center */
+    border-bottom: 1px solid #dddfe2;
+}
+
+.profile-info {
+    margin-left: 0; /* Remove left margin */
+    display: flex; /* Enable flexbox */
+    align-items: center; /* Center items vertically */
+}
+
+.profile-info h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0;
+    color: #1c1e21;
+    display: inline-block; /* Allow horizontal alignment */
+}
+
+/* Profile Navigation */
+.profile-nav {
+    display: flex;
+    padding: 0 32px;
+    background: white;
+    border-radius: 8px;
+    margin-top: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.profile-nav-item {
+    padding: 16px 32px;
+    color: #65676b;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    left: 365px
+}
+
+.profile-nav-item.active {
+    color: #1b74e4;
+}
+
+.profile-nav-item.active:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #1b74e4;
+}
+
+/* Profile Actions */
+.profile-actions {
+    display: flex;
+    gap: 8px;
+    padding: 0;
+}
+
+.profile-actions .button {
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.primary-action {
+    background: #355E3B;
+    color: white;
+}
+.primary-action:hover {
+    background: #23502a;
+}
+.secondary-action {
+    background: #e4e6eb;
+    color: #050505;
+}
+
+/* Content Grid */
+.profile-content-grid {
+display: grid
+;
+    grid-template-columns: 360px 1fr;
+    gap: 16px;
+    padding: 16px 32px;
+    margin-top: 16px;
+    position: relative;
+    right: 89px;
+}
+
+/* Left Sidebar */
+.profile-sidebar {
+    background: white;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    height:100px;
+}
+
+/* Posts Section */
+.profile-posts {
+    background: transparent;
+}
+
+.post-card {
+    background: white;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-content-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .profile-cover {
+        height: 200px;
+    }
+    
+    .profile-avatar-container {
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .profile-avatar-container img {
+        width: 128px;
+        height: 128px;
+    }
+    
+    .profile-info {
+        margin-left: 0;
+        text-align: center;
+        margin-top: 60px;
+    }
+}

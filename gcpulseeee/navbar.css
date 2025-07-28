@@ -1,0 +1,220 @@
+/* NAVBAR FIXES */
+
+.navbar {
+    width: 100%;
+    background-color: #355E3B;
+    height: 60px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed; /* Navbar is fixed at the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    margin-bottom: 20px !important; /* Prevents content from being hidden under the navbar */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8);
+}
+#logo{
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+.nav-left, .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-center {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-icon {
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    color: #ccc !important; /* Ensures consistent icon color */
+}
+
+#userIcon {
+    
+    color: #fff; /* Icon color */
+    background-color: #4D8956; /* Circle background color */
+    padding: 10px; /* Space around icon to form the circle */
+    border-radius: 50%; /* Make it circular */
+    display: inline-flex; /* Center the icon inside */
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* Width and height must be equal */
+    height: 40px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+     }
+     #userIcon:hover {
+    background-color: #417449; /* Darker on hover */
+}
+
+
+#notifIcon {
+    color: #fff; /* Icon color */
+    background-color: #4D8956; /* Circle background color */
+    padding: 10px; /* Space around icon to form the circle */
+    border-radius: 50%; /* Make it circular */
+    display: inline-flex; /* Center the icon inside */
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* Width and height must be equal */
+    height: 40px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+
+#notifIcon:hover {
+    background-color: #417449;
+}
+#homeIcon {
+    color: #fff; /* Icon color */
+    background-color: #4D8956; /* Circle background color */
+    padding: 10px; /* Space around icon to form the circle */
+    border-radius: 50%; /* Make it circular */
+    display: inline-flex; /* Center the icon inside */
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* Width and height must be equal */
+    height: 40px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+
+#homeIcon:hover {
+    background-color: #417449;
+}
+
+/* Prevent Bootstrap from adding its default dropdown icon */
+.dropdown-toggle::after {
+    display: none !important;
+}
+
+/* If an underscore or extra unwanted icon appears, hide it */
+#userIcon {
+    font-weight: normal; /* Remove any unintended styles */
+}
+
+.search-form {
+    display: flex;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: white;
+    height: 40px;
+    max-width: 350px; /* Keeps the search box a consistent size */
+}
+
+.search-form input[type="text"] {
+    border: none;
+    padding: 0 10px;
+    outline: none;
+    width: 100%; /* Takes up remaining space */
+}
+
+.search-form button {
+    background-color: #2E8B57; /* Darker shade of your navbar color */
+    border: none;
+    padding: 0 12px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Search input group with icon inside */
+.search-form-with-icon .input-group {
+    max-width: 300px;
+    height: 40px;
+}
+
+.search-form-with-icon .input-group-text {
+    border-radius: 20px 0 0 20px;
+    padding: 0 15px;
+}
+
+.search-form-with-icon .form-control {
+    border-radius: 0 20px 20px 0;
+    border-left: none;
+    padding-left: 0;
+}
+
+.search-form-with-icon .form-control:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 172, 237, 0.25);
+    border-color: #00aced;
+}
+
+.search-form-with-icon .input-group-text i {
+    font-size: 16px;
+}
+
+
+/* Customizing the links */
+.navbar .navbar-brand, .nav-link {
+    color: white !important;
+}
+
+.navbar .nav-link:hover, .navbar .navbar-brand:hover {
+    color: #00aced; /* Change on hover */
+}
+
+/* Notification Panel */
+.notif-panel {
+    max-height: 300px; /* Limiting the height of the notifications panel */
+    overflow-y: auto;
+}
+
+.notif-panel h4 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* List items inside notifications */
+.notif-message {
+    display: flex;
+    flex-direction: column;
+}
+
+.notif-time {
+    font-size: 0.85rem;
+    color: #888;
+}
+
+/* Notification panel item */
+.notif-panel ul {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.notif-panel ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.notif-panel ul li:last-child {
+    border-bottom: none;
+}
+
+.notif-panel ul li a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+}
+
+/* Search form responsiveness */
+@media (max-width: 768px) {
+    .search-form {
+        max-width: 100%; /* Full width on small screens */
+    }
+
+    .navbar {
+        padding: 0 10px;
+    }
+}

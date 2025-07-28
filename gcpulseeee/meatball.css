@@ -1,0 +1,64 @@
+.meatball-menu-container {
+    position: relative;
+    display: inline-block;
+    float: right;
+    margin-top: -10px;
+    z-index: 10;
+}
+
+.meatball-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px 10px;
+    color: #555;
+    transition: background 0.2s ease;
+}
+
+.meatball-btn:hover {
+    background-color: #f0f0f0;
+    border-radius: 50%;
+}
+
+.meatball-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 30px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    padding: 10px;
+    min-width: 120px;
+}
+
+.meatball-dropdown button,
+.meatball-dropdown .delete-btn {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 8px;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.meatball-dropdown button:hover,
+.meatball-dropdown .delete-btn:hover {
+    background-color: #f2f2f2;
+    border-radius: 4px;
+}
+
+/* Optional: Delete button color */
+.delete-btn {
+    color: #e74c3c;
+}
+
+/* Show the dropdown */
+.meatball-menu-container.show .meatball-dropdown {
+    display: block;
+}

@@ -1,0 +1,91 @@
+/* _comments.css */
+
+/* Comments Section */
+.comments-section {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ddd;
+    margin-top: 10px;
+}
+
+.comment {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.comment-time {
+    font-size: 12px;
+    color: gray;
+}
+
+/* Comment Toggle Button */
+.toggle-comments-btn {
+    background-color: var(--secondary-alt);
+    border: none;
+    padding: 5px 10px;
+    margin: 10px 0;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 8px;
+}
+
+.toggle-comments-btn:hover {
+    background-color: #e6d87f;
+}
+
+/* Comment Thread */
+.comment-thread { 
+    margin-left: 20px; 
+    border-left: 2px solid #ccc; 
+    padding-left: 10px; 
+}
+
+.comment { 
+    margin-top: 10px; 
+    display: flex; 
+    gap: 10px; 
+}
+
+.comment-avatar { 
+    width: 40px; 
+    height: 40px;
+    border-radius: 50%; 
+}
+
+.comment-content { 
+    flex: 1; 
+}
+
+.comment-actions button { 
+    background: none; 
+    border: none; color: var(--accent-color); 
+    margin-right: 8px; 
+    cursor: pointer; 
+}
+.reply-form {
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.reply-textarea {
+    width: 100%;
+    min-height: 60px;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+.reply-form button {
+    background-color: #355E3B;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.reply-form button:hover {
+    background-color: #2A4A2F;
+}

@@ -1,0 +1,30 @@
+.hamburger-menu {
+    cursor: pointer;
+    display: inline-block;
+    width: 30px;
+    height: 25px;
+    position: relative;
+    justify-content: space-between;
+ }
+ 
+ .line {
+    background-color: #333; /* The color of the lines */
+    height: 4px; /* Thickness of the lines */
+    width: 100%;
+    position: absolute;
+    transition: 0.3s ease;
+ }
+ 
+ .line:nth-child(1) {
+    top: 0;
+ }
+ 
+ .line:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+ }
+ 
+ .line:nth-child(3) {
+    bottom: 0;
+ }
+ 

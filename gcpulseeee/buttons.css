@@ -1,0 +1,26 @@
+.action-btn, .create-post-btn {
+    padding: 10px 20px;
+    background-color: #355E3B;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.action-btn:hover,
+.create-post-btn:hover {
+    background-color: #355E3B;
+}
+
+.create-post-container {
+    text-align: right;
+    max-width: 600px;
+    margin: 0 auto 20px auto;
+}
+
+.post-actions {
+    display: flex;
+    gap: 10px;
+}

@@ -1,0 +1,251 @@
+.nav-link{
+    color: black !important;
+}
+
+.nav-link.btn.btn-link.text-start {
+    background-color: #355E3B;
+    color: white !important;
+    font-weight: bold;
+    border-radius: 6px;
+    padding: 10px 15px;
+    width: 90%px !important;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    border-radius: 25px !important;
+
+    /* Flexbox for centering */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* spacing between icon and text */
+}
+.nav-link.btn.btn-link.text-start:hover {
+    background-color: #2e4e33;
+    color: #fff;
+}
+
+.nav-link.btn.btn-link.text-start i {
+    color: white; /* ensures the icon is also white */
+}
+/* Container/Sidebar base */
+.sidebar {
+    width: 360px;
+    height: calc(100vh - 60px);
+    background-color: #fff;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    z-index: 0;
+    overflow-y: auto;
+    padding: 16px;
+}
+
+/* Form styling (filter) */
+.sidebar form label {
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+    color: #333;
+}
+
+.sidebar .form-select {
+    background-color: #f0f2f5;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+/* Navigation */
+.sidebar .nav-link {
+    color: #050505;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: background-color 0.2s;
+    margin-bottom: 4px;
+    text-decoration: none;
+    width: 320px;
+}
+
+.sidebar .nav-link:hover {
+    background-color: #f2f2f2;
+}
+
+.sidebar .nav-link i {
+    font-size: 20px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #e4e6eb;
+    color: #050505;
+}
+
+/* Category Filter */
+.sidebar .form-label {
+    color: #65676b;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 16px 8px 12px;
+    margin: 0;
+}
+
+/* Upcoming Appointments Section */
+.upcoming-appointments {
+    background-color: #f0f2f5;
+    border-radius: 8px;
+    padding: 12px;
+    margin-top: 16px;
+}
+
+.appointments-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.appointments-header strong {
+    color: #fff;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.appointments-header .btn-primary {
+    background-color: #e4e6eb;
+    color: #050505;
+    border: none;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Appointment cards */
+.appointment-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 8px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.appointment-title {
+    color: #050505;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.appointment-time {
+    color: #65676b;
+    font-size: 13px;
+}
+
+/* Divider */
+.sidebar hr {
+    margin: 8px 0;
+    border-color: #ced0d4;
+    opacity: 0.2;
+}
+
+
+.sidebar .toggle-btn {
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.sidebar .sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.95rem;
+    padding: 0.6rem;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.sidebar .sidebar-link:hover {
+    background-color: #e0e0e0;
+}
+
+.sidebar .link-text {
+    transition: opacity 0.2s ease;
+}
+
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.main-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Remove the custom-sidebar-overlay styles */
+
+/* Layout wrapper */
+.layout-wrapper {
+    display: block;
+    min-height: 100vh;
+    margin-top: 60px; /* Account for fixed navbar */
+    position: relative;
+}
+
+
+
+/* Main content area - remove margin transitions */
+.main-content {
+    margin-left: 360px; /* Same as sidebar width */
+    width: calc(100% - 360px);
+    min-height: calc(100vh - 60px);
+    position: relative;
+    z-index: 1;
+    padding-top: 0; /* Remove top padding completely */
+}
+
+.calendar-box {
+    position: fixed;      /* Make it fixed on the viewport */
+    top: 70px;            /* Distance from the top of the page */
+    right: 20px;          /* Distance from the right edge */
+    width: 530px;         /* Set a width (adjust as needed) */
+    background: #FFFFFF;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    z-index: 100;        /* Make sure it stays on top */
+}
+
+.calendar-box h4 {
+    margin: 10px 0;
+}
+.appointments-sidebar {
+  width: 450px;       /* Set the width you want */
+  float: right;       /* Float it to the right */
+  /* Optional styling */
+
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .sidebar.open + .main-content {
+        margin-left: 0;
+    }
+    
+    .sidebar {
+        width: 100%;
+        max-width: 300px;
+    }
+}

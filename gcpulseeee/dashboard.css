@@ -1,0 +1,256 @@
+/* Main Layout */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fe;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 13px;
+}
+
+#blockDateButton {
+  background-color: #2C5F34;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+#blockDateButton:hover {
+  background-color: #1B3B20;
+}
+
+.chart-card {
+  background: white;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  width: 100%;
+  margin: 0; /* Add this to remove any margin */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 450px;
+}
+
+#dashboardCalendar {
+  width: 500px;
+  margin-left: 00px;
+
+}
+.main-content {
+    position: relative;
+    top: 60px;
+    margin-left: 200px;
+    padding: 20px 28px;
+}
+
+h1 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    text-align: center;
+    color: #fff;
+}
+/* Header Styles */
+h2 {
+    color: #1a1f36;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Stats Overview */
+.stats-overview {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px; /* more space between cards */
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: white;
+    padding: 20px; /* more padding for bigger size */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    display: flex;
+    align-items: center;
+    gap: 16px; /* space between icon and text */
+    min-height: 100px; /* ensures height */
+    position: relative;
+    top:-30px
+}
+
+.stat-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    font-size: 18px; /* bigger icon font */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f3f4f6;
+    color: #6c5ce7;
+}
+
+.stat-info h3 {
+    font-size: 20px; /* bigger stat number */
+    font-weight: 700;
+    color: #1a1f36;
+    margin: 0;
+}
+
+.stat-info p {
+    font-size: 13px; /* slightly bigger label */
+    color: #6b7280;
+    margin: 4px 0 0 0;
+}
+
+/* Cards Grid */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+    padding: 16px;
+    transition: transform 0.2s;
+    font-size: 13px;
+}
+
+.card:hover {
+    transform: translateY(-1px);
+}
+
+/* Charts Container */
+.charts-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.chart-card {
+    background: white;
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+    width: 100%;
+    margin: 0; /* Add this to remove any margin */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 450px;
+}
+
+.chart-card.full-width {
+    grid-column: 1 / -1;
+}
+
+.chart-card canvas {
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+}
+
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.chart-header h3 {
+    font-size: 14px;
+    color: #1a1f36;
+    margin: 0;
+}
+
+/* Chart Controls */
+.time-filter,
+.chart-actions button {
+    padding: 6px 12px;
+    font-size: 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    background: white;
+    color: #6b7280;
+    cursor: pointer;
+}
+
+.chart-actions button.active {
+    background: #6c5ce7;
+    color: white;
+    border-color: #6c5ce7;
+}
+
+/* Analytics Link */
+a[href='analytics_dashboard.php'] {
+    display: inline-block;
+    background: #6c5ce7;
+    color: white;
+    padding: 8px 16px;
+    font-size: 13px;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-bottom: 16px;
+    transition: background 0.2s;
+}
+
+a[href='analytics_dashboard.php']:hover {
+    background: #5b4bc4;
+}
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+    .stats-overview {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .charts-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 1200px) {
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 1024px) {
+    .charts-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 0;
+        padding: 16px;
+    }
+
+    .stats-overview,
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+}
+#engagementChartContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: 400px;
+    margin: 0; /* Add this to remove any margin */
+    padding: 0; /* Add this to remove any padding */
+    left: 10px;
+}

@@ -1,0 +1,1469 @@
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: (0, 0, 0, 0.4);
+}
+
+.centered-icon-bell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 200px; /* Change size as needed */
+    color: #F4BB44;  /* Optional: red color for warning */
+    height: 100px;   /* Adjust based on layout */
+    margin: 150px auto; /* Center horizontally */
+    
+}
+
+.modal-content-calendar {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 15px; /* Slightly smaller padding */
+    border-radius: 12px; /* Slightly less round */
+    max-width: 480px; /* Reduced from 680px */
+    min-height: 400px; /* Reduced from 600px */
+    position: relative;
+    color: var(--text-color);
+    animation: fadeIn 0.3s ease-in-out;
+    text-align: center;
+}
+
+#modalTitle {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+}
+
+#modalStatus {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #28a745; /* Green for success */
+    text-align: center;
+}
+#calendarCloseBtn{
+    background-color: #ccc;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);  
+    display: block;
+    margin: 0 auto;
+    
+}
+
+#calendarCloseBtn:hover {
+    background-color: #e5e5e5;
+    transform: scale(1.05); /* Slight scale effect on hover */
+}
+/* Modal Container */
+#editModal {
+    display: none;
+    position: fixed;
+    z-index: 1050;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+/* Modal Content */
+.modal-content-edit {
+    background-color: #fff;
+    margin: 8% auto;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+/* Close Button */
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+/* Headings */
+.modal-content-edit h3 {
+    margin-top: 0;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+/* Input Labels */
+.modal-content-edit label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Inputs */
+.modal-content-edit input[type="text"],
+.modal-content-edit input[type="datetime-local"],
+.modal-content-edit input[type="number"] {
+    width: 100%;
+    padding: 8px 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* Button Container */
+.modal-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Save Button */
+#editSaveBtn {
+     background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+#editSaveBtn:hover {
+    background-color: #218838;
+    transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+/* Cancel Button */
+#editCancelBtn {
+   background-color: #e5e5e5;
+    color: black;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+#editCancelBtn:hover {
+    background-color: #ccc;
+}
+
+
+.modal-content-cancel {
+    background-color: #fff;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 680px;
+    min-height: 600px;
+    position: relative;
+    margin-top: 100px;
+    color: var(--text-color);
+    justify-content: center;
+    text-align: center;
+    margin-top: 200px;
+     animation: fadeIn 0.3s ease-in-out;
+}
+
+.centered-icon-cancel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 200px; /* Change size as needed */
+    color: #d9534f;  /* Optional: red color for warning */
+    height: 100px;   /* Adjust based on layout */
+    margin: 150px auto; /* Center horizontally */
+    
+}
+    #cancelModal h3 {
+        color: red;
+    }
+
+    #confirmCancelBtn {
+    background-color: #d9534f;     /* Bootstrap-like danger red */
+    color: white;                  /* White text for contrast */
+    padding: 10px 20px;            /* Spacing inside the button */
+    border: none;                  /* Remove border */
+    border-radius: 8px;            /* Slightly rounded corners */
+    font-size: 16px;               /* Readable font size */
+    cursor: pointer;              /* Pointer on hover */
+    transition: background-color 0.3s ease;  /* Smooth hover effect */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.4);
+    transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+#confirmCancelBtn:hover {
+    background-color: #c9302c;     /* Darker red on hover */
+    transform: scale(1.05); /* Slight scale effect on hover */
+
+}
+#cancelCancelBtn {
+    background-color: #e5e5e5;     /* Bootstrap-like danger red */
+    color: black;                  /* White text for contrast */
+    padding: 10px 20px;            /* Spacing inside the button */
+    border: none;                  /* Remove border */
+    border-radius: 8px;            /* Slightly rounded corners */
+    font-size: 16px;               /* Readable font size */
+    cursor: pointer;              /* Pointer on hover */
+    transition: background-color 0.3s ease;  /* Smooth hover effect */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.4);
+}
+
+#cancelCancelBtn:hover {
+    background-color: #ccc;     
+    transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+#conflictModal h2.conflict-heading {
+  color: #d9534f;
+  border-radius: 4px;
+  padding: 10px 15px;
+  display: inline-block;
+  margin: 0 auto 15px auto; /* center and add spacing below */
+  text-align: center;
+
+}
+#conflictModal p.conflict-text {
+  color: black;
+  border-radius: 4px;
+  padding: 10px 15px;
+  display: inline-block;
+  margin: 0 auto 15px auto; /* center and add spacing below */
+  text-align: center;
+  font-size: 20px;
+}
+#conflictModal .request-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+#conflictContent{
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 680px;
+    min-height: 600px;
+    position: relative;
+    color: var(--text-color);
+     animation: fadeIn 0.3s ease-in-out;
+}
+.centered-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 200px; /* Change size as needed */
+    color: #d9534f;  /* Optional: red color for warning */
+    height: 100px;   /* Adjust based on layout */
+    margin: 150px auto; /* Center horizontally */
+}
+
+.modal-lg-custom {
+    max-width: 680px;
+    min-height: 600px;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.centered-icon-check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 200px; /* Change size as needed */
+    color: #355E3B;  /* Optional: red color for warning */
+    height: 100px;   /* Adjust based on layout */
+    margin: 150px auto; /* Center horizontally */
+}
+#centered-icon-logout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px; /* Change size as needed */
+    height: 10px;   /* Adjust based on layout */
+    margin: 150px auto; /* Center horizontally */
+}
+#cancelLogoutBtn{
+    background-color: #e5e5e5;
+    color: black;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+#cancelLogoutBtn:hover{
+    background-color: #ccc;
+    transform: scale(1.05); /* Slight scale effect on hover */
+}   
+
+
+#btnLogout{
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+#btnLogout:hover{
+    background-color: #c9302c;
+    transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+#successModal h5.success-heading {
+  font-size: 24px;
+  color: black;
+  border-radius: 4px;
+  padding: 10px 15px;
+  display: inline-block;
+  margin: 0 auto 15px auto; /* center and add spacing below */
+  text-align: center;
+
+}
+#successModal p.success-text {
+  font-size: 20px;
+  color: black;
+  border-radius: 4px;
+  padding: 10px 15px;
+  display: inline-block;
+  margin: 0 auto 15px auto; /* center and add spacing below */
+  text-align: center;
+  font-size: 20px;
+}
+#successModal .request-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+#logoutContent{
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 680px;
+    min-height: 600px;
+    position: relative;
+    color: var(--text-color);
+     animation: fadeIn 0.3s ease-in-out;
+}
+
+
+
+/* Modal body styling */
+#logoutContent .modal-body {
+  color: black;
+  border-radius: 4px;
+  padding: 10px 15px;
+  display: inline-block;
+  margin: 0 auto 15px auto; /* center and add spacing below */
+  text-align: center;
+  font-size: 20px;
+}
+
+#successModal p.success-text {
+  font-size: 20px;
+  color: black;
+  border-radius: 4px;
+  padding: 10px 15px;
+  display: inline-block;
+  margin: 0 auto 15px auto; /* center and add spacing below */
+  text-align: center;
+  font-size: 20px;
+}
+#successModal .request-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+#successContent{
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 680px;
+    min-height: 600px;
+    position: relative;
+    color: var(--text-color);
+     animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Modal title styling */
+#successModal .modal-title {
+  color: #355E3B;
+  border-radius: 4px;
+  padding: 10px 15px;
+  display: inline-block;
+  margin: 0 auto 15px auto; /* center and add spacing below */
+  text-align: center;
+}
+
+/* Modal body styling */
+#successModal .modal-body {
+  color: black;
+  border-radius: 4px;
+  padding: 10px 15px;
+  display: inline-block;
+  margin: 0 auto 15px auto; /* center and add spacing below */
+  text-align: center;
+  font-size: 20px;
+}
+    #calendar {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+/* Modal footer button */
+#pastDateModal .modal-footer,
+#conflictModal .modal-footer,
+#successModal .modal-footer,
+#logoutModal .modal-footer {
+text-align: center;
+justify-content: center;
+
+}
+
+#pastDateModalLabel {
+    font-size: 30px;
+    margin: 16px auto; /* top-bottom margin and auto horizontal */
+    text-align: center;
+    display: block; /* ensures text-align works as expected */
+}
+
+#pastDateBody {
+    font-size: 20px;
+    margin: 16px auto; /* top-bottom margin and auto horizontal */
+    text-align: center;
+    display: block; /* ensures text-align works as expected */
+}
+
+#pastDateModal .request-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+#pastDateModal .request-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+#createPostModal span{
+    font-size: 30px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+
+
+#createPostModal form{
+    height: 460px;
+}
+
+#createPostContent{
+        background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 650px;
+    min-height: 660px;
+    position: relative;
+     animation: fadeIn 0.3s ease-in-out;
+}
+#appointmentContent{
+        background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 650px;
+    min-height: 300px;
+    position: relative;
+     animation: fadeIn 0.3s ease-in-out;
+}
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 700px;
+    min-height: 300px;
+    position: relative;
+     animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content .close {
+    color: black;
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    font-size: 26px;
+    font-weight: bold;
+    cursor: pointer;
+}
+/*.modal-content .close:hover {
+    color: red;
+    transform: scale(1.1);
+    transition: color 0.2s, transform 0.2s;
+}
+*/
+
+.modal-content input[type="text"],
+.modal-content textarea,
+.modal-content select,
+.modal-content input[type="datetime-local"] {
+    width: 590px;
+    padding: 12px 14px;
+    margin: 10px;
+    border: none;
+    border-radius: 12px;
+    font-size: 14px;
+    background-color: #E2E2E2;
+    color: var(--text-color);
+    outline: none;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.4);
+}
+input[type="file" i] {
+    display: block;
+    padding: 8px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    cursor: pointer;
+    color: #333;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.4);
+    margin: 10px;
+}
+
+input[type="file" i]::file-selector-button {
+    background-color: #355E3B;
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="file" i]::file-selector-button:hover {
+    background-color: #1b3b20;
+}
+
+#appointment-btn {
+    float: right;
+    margin-top: 50px;
+    padding: 10px 20px;
+    background-color: #074D34;
+    border: none;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width:600px;
+}
+
+#create-post-btn {
+    float: right;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #074D34;
+    border: none;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width:600px;
+}
+
+.modal-content button[type="submit"]:hover {
+    background-color: #1B3B20;
+}
+
+
+.modal-content-post {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 680px;
+    min-height: 600px;
+    position: relative;
+    color: var(--text-color);
+     animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content-post .close {
+    color: black;
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    font-size: 26px;
+    font-weight: bold;
+    cursor: pointer;
+}
+/*.modal-content-post .close:hover {
+    color: red;
+    transform: scale(1.1);
+    transition: color 0.2s, transform 0.2s;
+}
+*/
+.modal-content-post input[type="text"],
+.modal-content-post textarea,
+.modal-content-post select,
+.modal-content-post input[type="datetime-local"] {
+    width: 100%;
+    padding: 12px 14px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 12px;
+    font-size: 14px;
+    background-color: #E2E2E2;
+    color: var(--text-color);
+    outline: none;
+}
+
+.modal-content-post button[type="submit"] {
+    float: right;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #074D34;
+    border: none;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content-post button[type="submit"]:hover {
+    background-color: #1B3B20;
+}
+.modal-content-appointment {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 680px;
+    min-height: 600px;
+    position: relative;
+    color: var(--text-color);
+     animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content-appointment .close {
+    color: black;
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    font-size: 26px;
+    font-weight: bold;
+    cursor: pointer;
+}
+/*.modal-content-appointment .close:hover {
+    color: red;
+    transform: scale(1.1);
+    transition: color 0.2s, transform 0.2s;
+}
+*/
+.modal-content-appointment input[type="text"],
+.modal-content-appointment textarea,
+.modal-content-appointment select,
+.modal-content-appointment input[type="datetime-local"] {
+    width: 100%;
+    padding: 12px 14px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 12px;
+    font-size: 14px;
+    background-color: #E2E2E2;
+    color: var(--text-color);
+    outline: none;
+}
+
+.modal-content-appointment button[type="submit"] {
+    float: right;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #074D34;
+    border: none;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content-appointment button[type="submit"]:hover {
+    background-color: #1B3B20;
+}
+.modal-content-appointment-conflict {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 680px;
+    min-height: 600px;
+    position: relative;
+    color: var(--text-color);
+     animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content-appointment-conflict .close {
+    color: black;
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    font-size: 26px;
+    font-weight: bold;
+    cursor: pointer;
+}
+/*.modal-content-appointment-conflict .close:hover {
+    color: red;
+    transform: scale(1.1);
+    transition: color 0.2s, transform 0.2s;
+}
+*/
+.modal-content-appointment-conflict input[type="text"],
+.modal-content-appointment-conflict textarea,
+.modal-content-appointment-conflict select,
+.modal-content-appointment-conflict input[type="datetime-local"] {
+    width: 100%;
+    padding: 12px 14px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 12px;
+    font-size: 14px;
+    background-color: #E2E2E2;
+    color: var(--text-color);
+    outline: none;
+}
+
+.modal-content-appointment-conflict button[type="submit"] {
+    float: right;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #074D34;
+    border: none;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content-appointment-conflict button[type="submit"]:hover {
+    background-color: #1B3B20;
+}
+.modal-content-appointment-success {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 680px;
+    min-height: 600px;
+    position: relative;
+    color: var(--text-color);
+     animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content-appointment-success .close {
+    color: black;
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    font-size: 26px;
+    font-weight: bold;
+    cursor: pointer;
+}
+/*.modal-content-appointment-success .close:hover {
+    color: red;
+    transform: scale(1.1);
+    transition: color 0.2s, transform 0.2s;
+}
+*/
+.modal-content-appointment-success input[type="text"],
+.modal-content-appointment-success textarea,
+.modal-content-appointment-success select,
+.modal-content-appointment-success input[type="datetime-local"] {
+    width: 100%;
+    padding: 12px 14px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 12px;
+    font-size: 14px;
+    background-color: #E2E2E2;
+    color: var(--text-color);
+    outline: none;
+}
+
+.modal-content-appointment-success button[type="submit"] {
+    float: right;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #074D34;
+    border: none;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content-appointment-success button[type="submit"]:hover {
+    background-color: #1B3B20;
+}
+
+.modal-content-appointment-error {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 680px;
+    min-height: 600px;
+    position: relative;
+    color: var(--text-color);
+     animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content-appointment-error .close {
+    color: black;
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    font-size: 26px;
+    font-weight: bold;
+    cursor: pointer;
+}
+/*.modal-content-appointment-error .close:hover {
+    color: red;
+    transform: scale(1.1);
+    transition: color 0.2s, transform 0.2s;
+}
+*/
+.modal-content-appointment-error input[type="text"],
+.modal-content-appointment-error textarea,
+.modal-content-appointment-error select,
+.modal-content-appointment-error input[type="datetime-local"] {
+    width: 100%;
+    padding: 12px 14px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 12px;
+    font-size: 14px;
+    background-color: #E2E2E2;
+    color: var(--text-color);
+    outline: none;
+}
+
+.modal-content-appointment-error button[type="submit"] {
+    float: right;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #074D34;
+    border: none;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content-appointment-error button[type="submit"]:hover {
+    background-color: #1B3B20;
+}
+
+
+.modal-content-edit {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 680px;
+    min-height: 600px;
+    position: relative;
+    color: var(--text-color);
+     animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content-edit .close {
+    color: black;
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    font-size: 26px;
+    font-weight: bold;
+    cursor: pointer;
+}
+/*.modal-content-edit .close:hover {
+    color: red;
+    transform: scale(1.1);
+    transition: color 0.2s, transform 0.2s;
+}
+*/
+.modal-content-edit input[type="text"],
+.modal-content-edit textarea,
+.modal-content-edit select,
+.modal-content-edit input[type="datetime-local"] {
+    width: 100%;
+    padding: 12px 14px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 12px;
+    font-size: 14px;
+    background-color: #E2E2E2;
+    color: var(--text-color);
+    outline: none;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.4);
+}
+
+.modal-content-edit button[type="submit"] {
+    float: right;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #074D34;
+    border: none;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+}
+
+.modal-content-edit button[type="submit"]:hover {
+    background-color: #1B3B20;
+}
+
+.modal-content-create {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 680px;
+    min-height: 600px;
+    position: relative;
+    color: var(--text-color);
+     animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content-create .close {
+    color: black;
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    font-size: 26px;
+    font-weight: bold;
+    cursor: pointer;
+}
+/*.modal-content-create .close:hover {
+    color: red;
+    transform: scale(1.1);
+    transition: color 0.2s, transform 0.2s;
+}
+*/
+.modal-content-create input[type="text"],
+.modal-content-create textarea,
+.modal-content-create select,
+.modal-content-create input[type="datetime-local"] {
+    width: 100%;
+    padding: 12px 14px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 12px;
+    font-size: 14px;
+    background-color: #E2E2E2;
+    color: var(--text-color);
+    outline: none;
+}
+
+.modal-content-create button[type="submit"] {
+    float: right;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #074D34;
+    border: none;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content-create button[type="submit"]:hover {
+    background-color: #1B3B20;
+}
+
+.action-btn, .create-post-btn {
+    padding: 10px 20px;
+    background-color: #355E3B;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.action-like-btn{
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #999999;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 70px;
+    width: 200px;
+}
+
+
+.action-btn-comment{
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #999999;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 70px;
+    width: 200px;
+}
+.action-btn-comment:hover,
+.action-like-btn:hover,
+.action-btn:hover,
+.create-post-btn:hover {
+    background-color: #ccc;
+}
+
+.create-post-container {
+    text-align: right;
+    max-width: 600px;
+    margin: 0 auto 20px auto;
+}
+
+.post-actions {
+    display: flex;
+    gap: 10px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+@media (max-width: 480px) {
+    .modal-content {
+        padding: 15px;
+        width: 95%;
+    }
+}
+
+.chatbox {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    background-color: white;
+    border-radius: 8px;
+    z-index: 9999;
+    border: 1px solid #ccc;
+}
+.comment {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 10px 0;
+    font-family: Arial, sans-serif;
+}
+
+.comment strong {
+    font-weight: bold;
+    color: #050505;
+    font-size: 14px;
+}
+
+.comment em {
+    font-size: 12px;
+    color: #65676b;
+    margin-left: 4px;
+}
+
+.comment p {
+    background-color: #f0f2f5;
+    padding: 10px 14px;
+    border-radius: 18px;
+    margin: 4px 0;
+    max-width: 550px;
+    font-size: 14px;
+    color: #050505;
+    line-height: 1.4;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.comment small {
+    font-size: 12px;
+    color: #65676b;
+    margin-top: 4px;
+    display: block;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #dddfe2;
+    margin: 8px 0;
+}
+
+.search-results-appointments {
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+.search-results-appointments h4 {
+    margin-bottom: 15px;
+}
+
+
+/* Container for each comment */
+.comment {
+    display: flex;
+    flex-direction: column; /* Stack avatar + content vertically if needed */
+    margin-bottom: 20px;
+    padding-left: 0;
+}
+
+/* Layout inside comment: avatar + text side-by-side */
+.comment-content-wrapper {
+    display: flex;
+    align-items: flex-start;
+}
+
+/* Avatar styling */
+.comment-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+/* Text bubble */
+.comment-content {
+    background: #f0f2f5;
+    padding: 10px 15px;
+    border-radius: 12px;
+    max-width: 600px;
+    font-family: Arial, sans-serif;
+}
+
+/* Actions */
+.comment-actions {
+    margin-top: 8px;
+}
+
+.comment-actions button {
+    background: none;
+    border: none;
+    color: #1877f2;
+    cursor: pointer;
+    font-size: 13px;
+    margin-right: 10px;
+    padding: 0;
+}
+
+.comment-actions button:hover {
+    text-decoration: underline;
+}
+
+/* Reply form */
+.reply-form {
+    margin-top: 10px;
+}
+
+.reply-textarea {
+    width: 100%;
+    height: 60px;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    resize: vertical;
+    font-size: 14px;
+}
+
+/* Container for replies — indented slightly if you want */
+.replies {
+    margin-top: 10px;
+    padding-left: 50px; /* optional: small indentation to visually show it's a reply */
+}
+
+/* Reply textarea and button */
+.reply-form {
+    margin-top: 10px;
+}
+
+.reply-textarea {
+    width: 100%;
+    height: 60px;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    resize: vertical;
+    font-size: 14px;
+}
+
+.reply-form button {
+    margin-top: 5px;
+    background-color: #1877f2;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.reply-form button:hover {
+    background-color: #145dbf;
+}
+
+/* Delete button override (in form) */
+#btn-delete {
+    color: red;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    margin-left: 10px;
+}
+
+#btn-delete:hover {
+    text-decoration: underline;
+}
+#post-image {
+    max-width: 100%;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.comment-divider {
+    border: none;
+    border-top: 9px solid #ccc;
+    margin: 15px 0;
+}
+/* Base calendar styles */
+.fc {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  background-color: #ffffff;
+  color: #333;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 10px;
+}
+
+/* Header */
+.fc-toolbar {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 10px;
+  border-radius: 8px 8px 0 0;
+}
+
+.fc-toolbar h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #222;
+}
+
+.fc-button {
+  background-color: #355E3B;
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  margin: 0 3px;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.fc-button:hover,
+.fc-button:focus {
+  background-color: #1B3B20;
+}
+
+/* Today's highlight */
+.fc-day-today {
+  background-color: #f0f4ff !important;
+}
+
+/* Event styles */
+.fc-event {
+  background-color: #355E3B;
+  border: none;
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 13px;
+  width: 65px;
+}
+
+.fc-event:hover {
+  background-color: #1B3B20;
+  cursor: pointer;
+}
+
+/* Day grid cells */
+.fc-daygrid-day {
+  transition: background-color 0.2s ease;
+}
+
+.fc-daygrid-day:hover {
+  background-color: #f8fafc;
+}
+
+/* Time grid event */
+.fc-timegrid-event {
+  border-radius: 6px;
+  background-color: #10b981;
+  color: white;
+  border: none;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .fc-toolbar {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+#commentBtn {
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #999999;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 70px;
+    width: 200px;
+       position: relative; /* Enable positioning */
+    top: -5px; /* Move it up */
+    left: 300px; /* Move it to the right */
+}
+
+#commentBtn:hover {
+    background-color: #ccc;
+}
+#likeBtn {
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #999999;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 70px;
+    width: 200px;
+     position: relative; /* Enable positioning */
+    top: 175px;
+    left: 26px;
+    height: 40px;
+}
+
+#likeBtn:hover {
+    background-color: #ccc;
+}
+#likeCount{
+    width: 200px;
+     position: relative; /* Enable positioning */
+    top: -24px;
+    left: -56px;
+}
+#postContent{
+    position: relative;
+    top:50px;
+    text-align: center;
+    right:21px;
+    font-size: 22px;
+}
+#postTitle{
+    position: relative;
+    top:10px;
+    text-align: center;
+    right:21px;
+    font-size: 26px;
+}
+#postAuthor{
+    position: relative;
+    top:10px;
+    text-align: center;
+    right:21px;
+    font-size: 16px;
+}
